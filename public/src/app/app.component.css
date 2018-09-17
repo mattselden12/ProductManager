@@ -1,0 +1,13 @@
+#container{
+    margin: 1%;
+}
+
+.pagenav a{
+    margin-right: 3%;
+    margin-left: 1%;
+    text-decoration: underline;
+}
+
+.bold{
+    font-weight: bold;
+}
