@@ -1,9 +1,24 @@
 <div id="container">
   <h2>PPM - Project Product Management</h2>
-  <div class="pagenav">
+  <div *ngIf='currpage == "home"' class="pagenav">
     <a class="bold" [routerLink]="['/']">Home</a>
     <a [routerLink]="['/products']">Product List</a>
     <a [routerLink]="['/products/new']">Product Creation</a>
   </div>
-  <router-outlet></router-outlet>
+  <div *ngIf='currpage == "list"' class="pagenav">
+    <a [routerLink]="['/']">Home</a>
+    <a class="bold" [routerLink]="['/products']">Product List</a>
+    <a [routerLink]="['/products/new']">Product Creation</a>
+  </div>
+  <div *ngIf='currpage == "new"' class="pagenav">
+    <a [routerLink]="['/']">Home</a>
+    <a [routerLink]="['/products']">Product List</a>
+    <a class="bold" [routerLink]="['/products/new']">Product Creation</a>
+  </div>
+  <div *ngIf='currpage == "edit"' class="pagenav">
+    <a [routerLink]="['/']">Home</a>
+    <a [routerLink]="['/products']">Product List</a>
+    <a [routerLink]="['/products/new']">Product Creation</a>
+  </div>
+  <router-outlet (activate)='onActivate()'></router-outlet>
 </div>
